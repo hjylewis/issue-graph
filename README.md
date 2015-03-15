@@ -26,30 +26,38 @@ Issues nodes are linked by references within an issue's body to another issue us
 
 Features
 --------
-* Select source of graph
-    * Select between User repos, Organization repos, or public repos
-* Color
-    * Issue nodes colored by Repo
-* Auto zoom
-    * Graph automatically resizes to fit all issue nodes
-* Click Nodes
-    * Click nodes to dispay issue data and options to hide issue or cluster
-    * Clicked nodes are indicated by a thick outline
+####Select source of graph
+* Select between User repos, Organization repos, or public repos
+
+####Color
+* Issue nodes colored by Repo
+
+####Auto zoom
+* Graph automatically resizes to fit all issue nodes
+
+####Click Nodes
+* Click nodes to dispay issue data and options to hide issue or cluster
+* Clicked nodes are indicated by a thick outline
 ![alt text](./images/issueg2.png)
-* Add/hide
-    * Buttons to hide clicked issue nodes or clusters
-    * Add specific issue nodes
-* Undo
-    * Undo hidden issue nodes and clusters
-* Grouping
-    * Group issues by Assignee, Repo, or Milestone
-    * Hide groups by clicking group (can be undo'd)
+
+####Add/hide
+* Buttons to hide clicked issue nodes or clusters
+* Add specific issue nodes
+
+####Undo
+* Undo hidden issue nodes and clusters
+
+####Grouping
+* Group issues by Assignee, Repo, or Milestone
+* Hide groups by clicking group (can be undo'd)
 ![alt text](./images/issueg4.png)
-* Filtering
-    * Options on sidebar to filter the issue nodes by repo
-* Keyword Search Bar
-    * Greys out issue nodes not containing keyword in Title or Body
-    * Highlights keywords in issue data
+
+####Filtering
+* Options on sidebar to filter the issue nodes by repo
+
+####Keyword Search Bar
+* Greys out issue nodes not containing keyword in Title or Body
+* Highlights keywords in issue data
 ![alt text](./images/issueg3.png)
 
 DOWNLOAD + RUN LOCALLY
