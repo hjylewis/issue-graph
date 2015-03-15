@@ -17,7 +17,6 @@ var issues = function (session, callback) {
 	var github = new GitHubApi({
 		version: '3.0.0',
 	});
-
 	github.authenticate({
 		type: "oauth",
 		token: session.oauth
@@ -95,7 +94,7 @@ var issues = function (session, callback) {
 
 			var repos_length = filtered.length;
 			async.each(filtered, function (repo, done) {
-				getIssues(user, github, repo.name, 1, done);
+				getIssues(repo.owner.login, github, repo.name, 1, done);
 			}, function (err) {
 				if (err){
 					callback(err);
@@ -122,33 +121,36 @@ var issues = function (session, callback) {
 			per_page: 100
 			//state: "open"
 		}, function(err, res) {
-			//conole.log(res.length);
-			if (err) {
-				console.log('Error!' + err);
-				done(err);
-			}
-			res.forEach( function(value) {
-				// copy over just the values we want
 
-				var node = {
-					id: '' + value.id,
-					number: value.number,
-					title: value.title,
-					body: marked(value.body),
-					naked_body: value.body,
-					assignee: value.assignee ? value.assignee.login : "none",
-					milestone: value.milestone ? value.milestone.title : "none",
-					repo: name,
-					url: value.html_url
-				};
-				nodes.push(node);
-				nodesByNumber[user + "/" +node.repo + '#' + node.number] = node;
-			});
-			if (res.length === 0){
-				done();
+			if (res) console.log("Issue Length" + res.length + name);
+			if (err) {
+				console.log('Error pulling from '+name+': ' + err);
+				done(err);
 			} else {
-				getIssues(user,github, name, pageN+1, done);
+				res.forEach( function(value) {
+					// copy over just the values we want
+
+					var node = {
+						id: '' + value.id,
+						number: value.number,
+						title: value.title,
+						body: value.body ? marked(value.body) : "",
+						naked_body: value.body,
+						assignee: value.assignee ? value.assignee.login : "none",
+						milestone: value.milestone ? value.milestone.title : "none",
+						repo: name,
+						url: value.html_url
+					};
+					nodes.push(node);
+					nodesByNumber[user + "/" +node.repo + '#' + node.number] = node;
+				});
+				if (res.length === 0){
+					done();
+				} else {
+					getIssues(user,github, name, pageN+1, done);
+				}
 			}
+
 		});
 	}
 
