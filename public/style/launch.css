@@ -1,0 +1,26 @@
+#main {
+    width:600px;
+    margin: 70px auto;
+
+}
+
+h1{
+    text-align: center;
+    font-size: 4em;
+
+}
+
+#button {
+    position: relative;
+    top: 320px;
+    width: 190px;
+    margin: auto;
+}
+#images {
+    margin: 20px;
+}
+
+.image {
+    position: absolute;
+    width:600px;
+}
