@@ -255,7 +255,6 @@ var render = function (graphData) {
   var repoColor = {};
 
   var repoCount = {};
-
   graphData.nodes.forEach(function (node) {
     nodeDict[node.repo+node.number] = node;
     if (repoCount[node.repo] == null){
@@ -280,13 +279,6 @@ var render = function (graphData) {
   });
 
 
-  //Initial
-  var undoStack = [];
-  var groupObj = null;
-  linkedNodes.forEach(function (node){
-    add(node);
-  });
-  update();
 
 
 
@@ -313,7 +305,7 @@ var render = function (graphData) {
         .attr('type','checkbox')
         .attr('class','checkbox')
         .attr('checked','checked')
-        .attr('id','checkbox')
+        .attr('id','linked')
         .attr('name','linked');
   label.append('text').text('All linked');
 
@@ -328,7 +320,6 @@ var render = function (graphData) {
       .attr('name',repo);
     label.append('font').attr('color',repoColor[repo]).append('text').text(repo + ' ('+ (repoCount[repo] || 0)+')');
   });
-
 
   //Add Event listeners
   document.getElementById('all').addEventListener("click", allbox, false);
@@ -373,6 +364,18 @@ var render = function (graphData) {
 
 
   }
+  //Initial
+  var undoStack = [];
+  var groupObj = null;
+  if (linkedNodes.length == 0) {
+    if (d3.values(nodeDict).length > 500){
+      $( "#linked" ).attr('checked',false);
+    } else {
+      $( "#all" ).attr('checked','checked');
+      allbox();
+    }
+  }
+  checkbox();
 
 
   //FUNCTIONS
