@@ -5,7 +5,7 @@ http://issue-graph.markitx.com/
 
 A graphical view of the relationships between github issues 
 
-![alt text](./images/issueg1.png)
+![alt text](./public/images/issueg1.png)
 
 Motivation
 ----------
@@ -38,7 +38,7 @@ Features
 ####Click Nodes
 * Click nodes to dispay issue data and options to hide issue or cluster
 * Clicked nodes are indicated by a thick outline
-![alt text](./images/issueg2.png)
+![alt text](./public/images/issueg2.png)
 
 ####Add/hide
 * Buttons to hide clicked issue nodes or clusters
@@ -50,7 +50,7 @@ Features
 ####Grouping
 * Group issues by Assignee, Repo, or Milestone
 * Hide groups by clicking group (can be undo'd)
-![alt text](./images/issueg4.png)
+![alt text](./public/images/issueg4.png)
 
 ####Filtering
 * Options on sidebar to filter the issue nodes by repo
@@ -58,7 +58,7 @@ Features
 ####Keyword Search Bar
 * Greys out issue nodes not containing keyword in Title or Body
 * Highlights keywords in issue data
-![alt text](./images/issueg3.png)
+![alt text](./public/images/issueg3.png)
 
 DOWNLOAD + RUN LOCALLY
 ----------------------
