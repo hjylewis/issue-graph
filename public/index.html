@@ -9,17 +9,21 @@
   </head>
   <body>
 
-    <div id='graph'></div>
+    <div id='graph'>
+      <div id='loading'><img src="images/ajax-loader.gif">  Loading</div>
+    </div>
     <div id='side'>
       <div id='filter'>
-        <a style='float:right' href="/login.html"><text>Switch Source</text></a> 
-        Filter<br/>
-        <form id='checkboxForm'>
-        </form>
-        Group<br/>
-        <label><input type='checkbox' id='assigneeGroup'><text>By assignee</text></input></label><br/>
-        <label><input type='checkbox' id='repoGroup'><text>By repo</text></input></label><br/>
-        <label><input type='checkbox' id='mileGroup'><text>By milestone</text></input></label>
+        <div class='preload' hidden>
+          <a style='float:right' href="/login.html"><text>Switch Source</text></a> 
+          Filter<br/>
+          <form id='checkboxForm'>
+          </form>
+          Group<br/>
+          <label><input type='checkbox' id='assigneeGroup'><text>By assignee</text></input></label><br/>
+          <label><input type='checkbox' id='repoGroup'><text>By repo</text></input></label><br/>
+          <label><input type='checkbox' id='mileGroup'><text>By milestone</text></input></label>
+        </div>
       </div>
       <div id='find'>
         <select id='dropdown' class="find"></select>

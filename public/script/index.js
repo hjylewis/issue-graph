@@ -20,10 +20,17 @@ var descriptNode = {
 
 $.getJSON("graph-data.json")
   .done(function (data, textStatus, jqXHR) {
+
     var graphData = data;
+    $(".preload").attr('hidden',false);
+    $("#loading").attr('hidden',true);
+
     render(graphData);
   })
-  .fail();
+  .fail(function () {
+    alert('No repos were found under the user/organization you enter');
+    location.href="/login.html";
+  });
 var render = function (graphData) {
 
   //DROPDOWN

@@ -67,7 +67,10 @@ var issues = function (session, callback) {
 			} else {
 				github.repos.getFromUser(msg, function (err, res) {
 					repos = repos.concat(res);
-
+					if (!res){
+						callback("Error: Repos not found");
+						return;
+					}
 					if (res.length < 100){
 						if (session.source == 1){
 							callGetIssues(repos, session.uid);

@@ -15,6 +15,13 @@
   stroke-dasharray: 0,2 1;
 }
 
+#loading{
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 div#graph {
   height: 500px;
   width: 80%;
