@@ -12,15 +12,30 @@ h1{
 
 #button {
     position: relative;
-    top: 320px;
+    top: 310px;
     width: 190px;
     margin: auto;
 }
 #images {
-    margin: 20px;
+    margin: 20px auto;
 }
 
 .image {
     position: absolute;
-    width:600px;
+    height: 295px;
+    padding: auto;
+}
+
+#img2 {
+    padding-left:23.5px;
+}
+#img3 {
+    padding-left:21.5px;
+}
+#img1 {
+    width: 600px;
+}
+
+#img4 {
+    width: 600px;
 }
